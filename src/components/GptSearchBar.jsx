@@ -11,6 +11,8 @@ import { addsearchResults } from '../utils/movieslice';
     
     const dispatch=useDispatch();
     const inpref=useRef(null);
+    console.log("Gemini key:", import.meta.env.VITE_GEMINI_API_KEY);
+
      const searchmovieTMDB=async (movie)=>{
         // console.log(movie,"-------");
 
@@ -32,7 +34,7 @@ const ai = new GoogleGenAI({
 });
 console.log("searched team",query); 
 const gemini_response = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
+    model: "gemini-1.5-flash",
     contents: query,})
     // console.log(gemini_response,"gemini resssss");
     

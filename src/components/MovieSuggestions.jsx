@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 const MovieSuggestions = () => {
     const moviesfromredux=useSelector((store)=>store.movies.gptSearchesults);
-    console.loga("in movisuggestion from redux",moviesfromredux)
+    console.log("in movisuggestion from redux",moviesfromredux)
   return (
     <div>
         {/* {
