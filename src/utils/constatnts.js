@@ -13,4 +13,5 @@ export const poster_url="https://image.tmdb.org/t/p/w500";
 export const login_bg="https://blog.vpncity.com/wp-content/uploads/2020/01/xx.png";
 
 export const open_AI_key="";
+console.log("in constants",import.meta.env.VITE_GEMINI_API_KEY);
 export const Gemini_API=import.meta.env.VITE_GEMINI_API_KEY;
