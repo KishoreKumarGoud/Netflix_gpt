@@ -47,7 +47,19 @@ const gptMovies=gemini_response.candidates[0].content.parts[0].text.split(",").m
 console.log("gpt moviesssssss",gptMovies);
 const movieData=gptMovies.map((movie)=>searchmovieTMDB(movie))
 const tmdbResults=await Promise.all(movieData);
-dispatch(addsearchResults(tmdbResults))
+ const finalResults = tmdbResults.map((data) =>
+      data.results.map((movie) => ({
+        id: movie.id,
+        poster_path: movie.poster_path,
+      }))
+    );
+    console.log("movename",gptMovies,"final results",finalResults)
+dispatch(
+  addsearchResults({
+    movieNames: gptMovies,
+    movieResults: finalResults,
+  })
+);
 
 
 
@@ -73,7 +85,14 @@ dispatch(addsearchResults(tmdbResults))
             <button className='bg-red-600 px-2.5 rounded-lg py-2 font-semibold text-white' onClick={handleGPTSearch}>Search</button>
         </form>
 
-        
+         {/* <div>
+           <h1 className='bg-white  text-red-400 font-bold mb-4 pl-4 hover:text-black transition-all duration-400 '>hello</h1>
+        <h1 className='z-200 bg-red-800 w-fit '>
+         
+          <img src="https://tse3.mm.bing.net/th/id/OIP.25DfxcKL3bZRmRHo5I0pDgHaI3?pid=Api&P=0&h=180"></img>
+          <img src="https://www.pngplay.com/wp-content/uploads/1/8-Number-PNG-Royalty-Free.png"></img>
+        </h1>
+      </div> */}
     </div>
     </>
     

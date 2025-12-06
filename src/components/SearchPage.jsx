@@ -10,7 +10,7 @@ const GPTSearch = () => {
       {/* ✅ BACKGROUND IMAGE */}
       <img 
         src={login_bg}
-        className="absolute top-0 left-0 h-full w-full object-cover "
+        className="fixed top-0 left-0 h-full w-full object-cover "
         alt="background"
       />
 

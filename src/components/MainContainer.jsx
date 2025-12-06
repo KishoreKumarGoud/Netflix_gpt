@@ -10,7 +10,7 @@ const MainContainer = () => {
   const { original_title, overview } = mainMovie;
 
   return (
-    <div className="relative w-screen h-screen overflow-x-hidden">
+    <div className="relative w-screen h-screen overflow-x-hidden ">
 
       {/* BACKGROUND VIDEO */}
       <Videobg id={mainMovie.id} />
