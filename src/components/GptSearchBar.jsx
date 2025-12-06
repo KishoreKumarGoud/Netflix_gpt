@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addsearchResults } from '../utils/movieslice';
 
  const   GptSearchBar = () => {
+  const [isLoading,setLoading]=useState(false);
     
     const dispatch=useDispatch();
     const inpref=useRef(null);
@@ -26,6 +27,7 @@ return jsonData;
 
 
     async function handleGPTSearch(){
+      setLoading(true);
         const query="Act as movie recommandation system for the given query :"+ inpref.current.value + ",only give top 6 movies 'names only' comma-seperated array like in given result example:War,OG,Gana gana Mana,RRR,Ganga";
  
 // The client gets the API key from the environment variable `GEMINI_API_KEY`.
@@ -53,13 +55,17 @@ const tmdbResults=await Promise.all(movieData);
         poster_path: movie.poster_path,
       }))
     );
-    console.log("movename",gptMovies,"final results",finalResults)
+    console.log("movename",gptMovies,"final results",finalResults);
+
 dispatch(
   addsearchResults({
     movieNames: gptMovies,
     movieResults: finalResults,
   })
+
 );
+            setLoading(false);
+
 
 
 
@@ -80,9 +86,18 @@ dispatch(
   return (
     <>
     <div className='pt-[10%] mx-[30%] '>
+     {isLoading && (
+  <div className="fixed inset-0 bg-black/80 z-50 flex flex-col justify-center items-center gap-4">
+    <div className="w-12 h-12 border-4 border-white border-t-red-600 rounded-full animate-spin"></div>
+    <h1 className="text-white text-xl tracking-wider animate-pulse">
+      Finding movies for you...
+    </h1>
+  </div>
+)}
+
         <form className='bg-black p-4 flex justify-center items-center gap-4 ' onSubmit={(e)=>e.preventDefault()}>
             <input type="text" placeholder="what's on your mind..." className='bg-white py-2 px-2.5 rounded-md w-lg 'ref={inpref}/>
-            <button className='bg-red-600 px-2.5 rounded-lg py-2 font-semibold text-white' onClick={handleGPTSearch}>Search</button>
+            <button className='bg-red-600 px-2.5 rounded-lg py-2 font-semibold cursor-pointer text-white' disabled={isLoading} onClick={handleGPTSearch}>Search</button>
         </form>
 
          {/* <div>

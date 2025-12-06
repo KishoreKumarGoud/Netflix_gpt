@@ -12,7 +12,8 @@ const { movieNames, movieResults } = gptResults;
   console.log("movie names from suggestions comp", movieNames)
 
   return (
-    <div className="bg-black/40  h-full overflow-y-hidden w-full mt-10  ">
+    <>
+    {movieNames ? <div className="bg-black/40  h-full overflow-y-hidden w-full mt-10  ">
       {movieNames.map((name, index) => (
         <MovieList
           key={name}
@@ -20,7 +21,9 @@ const { movieNames, movieResults } = gptResults;
           movies={movieResults[index]}   
         />
       ))}
-    </div>
+    </div> : <div className="bg-black/50 relative z-400"></div>}
+ 
+    </>
   );
 };
 export default MovieSuggestions;
