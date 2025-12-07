@@ -66,8 +66,8 @@ const Login = () => {
     // Signed in 
     const user = userCredential.user;
 
-        +  
-    console.log("usert detials",user);
+         
+    // console.log("usert detials",user);
    
   })
   .catch((error) => {
@@ -90,9 +90,14 @@ const Login = () => {
       />
 
       {/* Form centered */}
-      <form className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-                      bg-black/65 py-12 px-12 rounded-xl shadow-xl
-                      flex flex-col gap-4 text-white w-92 max-w-xl">
+      <form className="
+  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+  bg-black/65 py-10 px-6 sm:px-10 md:px-12
+  rounded-xl shadow-xl
+  flex flex-col gap-4 text-white
+  w-[90%] sm:w-[70%] md:w-[50%] lg:w-[35%] xl:w-[28%]
+">
+
                         <label className="text-2xl font-semibold">{isSignIn? "Sign In" :"Sign Up"}</label>
           {!isSignIn &&  <input
           type="text"
@@ -100,7 +105,7 @@ const Login = () => {
           value={name}
     onChange={(e) => setname(e.target.value)}
           ref={nameref}
-          className="p-2 text-md bg-gray-900/70 rounded outline-none"
+className="p-3 text-[14px] sm:text-base bg-gray-900/70 rounded outline-none"
         />}              
         <input
           type="text"
@@ -108,7 +113,7 @@ const Login = () => {
            value={email}
     onChange={(e) => setemail(e.target.value)}
           ref={mailref}
-          className="p-2 text-md bg-gray-900/70 rounded outline-none"
+className="p-3 text-[14px] sm:text-base bg-gray-900/70 rounded outline-none"
         />
         <input
           type="password"
@@ -116,7 +121,7 @@ const Login = () => {
           value={password}
               onChange={(e) => setpassword(e.target.value)}
 
-          className="p-2 text-md bg-gray-900/70 rounded outline-none"
+className="p-3 text-[14px] sm:text-base bg-gray-900/70 rounded outline-none"
         />
         <button className="p-1 bg-red-600 rounded text-sm cursor-pointer" onClick={(e)=>validatedetails(e)}>
 {isSignIn ? "Sign In" : "Sign Up"}        </button>
@@ -131,7 +136,7 @@ const Login = () => {
 :           <span onClick={toggleForm} >Sign In now</span>
 }
 
-          <p className="mt-2.5 text-gray-400">This page is protected by reCaptcha to<br></br> ensure your are not a bot. <a className="text-blue-500">Learn More check12@gmail.com Check@1234  </a></p>
+          <p className="mt-2.5 text-gray-400">This page is protected by reCaptcha to<br></br> ensure your are not a bot. <a className="text-blue-500">Learn More </a></p>
         </div>
        
       </form>

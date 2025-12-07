@@ -20,7 +20,7 @@ useNowPlayingMovies();
 useTopRated();
 usePopularMovies();
 useUpcoming();
-console.log("gpt value",isgptsearch)
+// console.log("gpt value",isgptsearch)
   return (
    <div className="bg-black">
     <Header/>

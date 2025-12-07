@@ -9,7 +9,7 @@ import { useEffect } from "react";
 const getTopRated = async ()=>{
   const movies=await fetch('https://api.themoviedb.org/3/movie/top_rated?page=1',API_OPTIONS);
   const data=await movies.json();
-  console.log("fetched data");
+  // console.log("fetched data");
   dispatch(addtoprated(data.results));
   // console.log("data",data.results);
 
@@ -19,10 +19,10 @@ const getTopRated = async ()=>{
 useEffect(()=>{
  !toprated &&  getTopRated().then(()=>{
 
-    console.log("call success")
+    // console.log("call success")
   })
   .catch(()=>{
-    console.log("error call");
+    // console.log("error call");
   })
 },[]);
  }

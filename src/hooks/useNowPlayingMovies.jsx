@@ -20,10 +20,10 @@ useEffect(()=>{
 
  !nowPlayingMovies &&  getCurrentPlaying().then(()=>{
 
-    console.log("call success")
+    // console.log("call success")
   })
   .catch(()=>{
-    console.log("error call");
+    // console.log("error call");
   })
 },[]);
  }
