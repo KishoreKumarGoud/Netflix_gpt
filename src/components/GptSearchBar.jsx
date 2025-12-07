@@ -88,7 +88,7 @@ const GptSearchBar = () => {
         >
           <input
             type="text"
-            placeholder="what's on your mind..."
+            placeholder="Describe what's on your mind..."
             className='bg-white py-2 px-2.5 rounded-md w-lg max-sm:w-full'
             ref={inpref}
           />

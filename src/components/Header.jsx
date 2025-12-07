@@ -59,14 +59,15 @@ const Header = () => {
           {/* GPT Search / Home Toggle Button */}
           <button
             onClick={handlesearch}
-            className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition text-white flex items-center justify-center"
+            className=" cursor-pointer p-2 rounded-full bg-white/20 hover:bg-white/30 transition text-white flex items-center justify-center"
             title={!mode ? "GPT Search" : "Home"}
           >
             {!mode ? (
               // Search Icon
+              <>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-5 w-7 cursor-pointer"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -78,11 +79,15 @@ const Header = () => {
                   d="M21 21l-4.35-4.35m2.35-5.65a8 8 0 11-16 0 8 8 0 0116 0z"
                 />
               </svg>
+                    <span className="hidden sm:block">Ask AI</span>
+
+              </>
             ) : (
               // Home Icon
+              <>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-5 w-7 cursor-pointer"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -94,6 +99,9 @@ const Header = () => {
                   d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h5m4 0h5a1 1 0 001-1V10"
                 />
               </svg>
+                    <span className="hidden sm:block">Home</span>
+                    </>
+
             )}
           </button>
 

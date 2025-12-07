@@ -129,7 +129,7 @@ className="p-3 text-[14px] sm:text-base bg-gray-900/70 rounded outline-none"
            <span className="text-xs">Remember me</span>
         <span className="text-xs">Need help?</span>
         </div>
-        <p className="text-red-500 font-medium">{error!=null ? error :"All right"} </p>
+        {/* <p className="text-red-500 font-medium">{error!=null ? error :"All right"} </p> */}
         <div className="text-sm my-8">
           <span className="text-gray-400 ">{isSignIn? "New to Netflix?" : "Already have an account?"}</span>
           {isSignIn ?  <span onClick={toggleForm} className="cursor-pointer">Sign up now</span>
