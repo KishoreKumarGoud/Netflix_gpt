@@ -7,7 +7,7 @@ import { addNowplayingmovies } from "../utils/movieslice";
 
 import MainContainer from "./MainContainer";
 import SecondayContainer from "./SecondaryContainer";
-import useNowPlayingMovies from "../hooks/UseNowPlayingMovies";
+import useNowPlayingMovies from "../hooks/useNowPlayingMovies`";
 import usePopularMovies from "../hooks/usePopularMovies";
 import useTopRated from "../hooks/useToprated";
 import useUpcoming from "../hooks/useUpcoming";
