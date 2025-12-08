@@ -20,6 +20,9 @@ useNowPlayingMovies();
 useTopRated();
 usePopularMovies();
 useUpcoming();
+// App.jsx OR Header.jsx (top line)
+console.log("🔥 NEW BUILD VERSION LIVE - 7 DEC 🔥");
+
 // console.log("gpt value",isgptsearch)
   return (
    <div className="bg-black">
