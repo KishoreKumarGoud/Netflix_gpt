@@ -52,7 +52,8 @@ const Header = () => {
 
   return (
     <div className="fixed top-0 left-0 px-4 py-2 bg-gradient-to-b from-black to-transparent z-50 w-full flex justify-between items-center">
-      <img src={netflix_log} alt="logo" className="w-28 md:w-36" />
+      <img src={netflix_log} alt="logo" className="w-28 md:w-36 cursor-pointer" onClick={handlesearch
+      }/>
 
      {user && (
   <div className="flex items-center gap-2">

@@ -22,15 +22,7 @@ const Videotitle = ({ title, overview }) => {
           {overview}
         </p>
 
-        <div className="flex gap-4">
-          <button className="bg-gray-200 text-black font-semibold px-4 py-2 md:px-6 md:py-2 rounded-md hover:bg-gray-400">
-            Play
-          </button>
-
-          <button className="bg-gray-500 bg-opacity-90 rounded-lg px-4 py-2 md:px-6 md:py-2 text-white">
-            More info
-          </button>
-        </div>
+       
       </div>
     </div>
   );
