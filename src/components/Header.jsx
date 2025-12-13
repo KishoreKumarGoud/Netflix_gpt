@@ -7,6 +7,9 @@ import { addUser, removeUser } from "../utils/userSlice";
 import { useEffect } from "react";
 import { netflix_log } from "../utils/constatnts";
 import { toggleview } from "../utils/gptslice";
+import logo from "../../src/assets/logo.png"
+
+// NetflixGPT\src\assets\logo.png
 
 const Header = () => {
   const mode = useSelector((store) => store.gpt.showsearch);
@@ -52,7 +55,7 @@ const Header = () => {
 
   return (
     <div className="fixed top-0 left-0 px-4 py-2 bg-gradient-to-b from-black to-transparent z-50 w-full flex justify-between items-center">
-      <img src={netflix_log} alt="logo" className="w-28 md:w-36 cursor-pointer" onClick={handlesearch
+      <img src={logo} alt="logo" className="w-10 h-28  md:w-36 cursor-pointer" onClick={handlesearch
       }/>
 
      {user && (
@@ -85,7 +88,7 @@ const Header = () => {
     {/* Sign Out Button */}
     <button
       onClick={handleSignout}
-      className="cursor-pointer px-3 py-1.5 rounded-md bg-red-600 hover:bg-red-700 transition text-white text-sm font-medium whitespace-nowrap"
+      className="cursor-pointer px-3 py-1.5 rounded-md bg-yellow-600  hover:bg-yellow-700  transition text-white text-sm font-medium whitespace-nowrap"
     >
       Sign Out
     </button>

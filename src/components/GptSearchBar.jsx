@@ -73,7 +73,7 @@ const GptSearchBar = () => {
       {/* ✅ SAME LOADING OVERLAY - NO POSITION CHANGE */}
       {isLoading && (
         <div className="fixed inset-0 bg-black/80 z-50 flex flex-col justify-center items-center gap-4">
-          <div className="w-12 h-12 border-4 border-white border-t-red-600 rounded-full animate-spin"></div>
+          <div className="w-12 h-12 border-4 border-white border-t-yellow-600  rounded-full animate-spin"></div>
           <h1 className="text-white text-xl tracking-wider animate-pulse">
             Finding movies for you...
           </h1>
@@ -94,7 +94,7 @@ const GptSearchBar = () => {
           />
 
           <button
-            className='bg-red-600 px-2.5 rounded-lg py-2 font-semibold cursor-pointer text-white w-full sm:w-auto'
+            className='bg-yellow-600  px-2.5 rounded-lg py-2 font-semibold cursor-pointer text-white w-full sm:w-auto'
             disabled={isLoading}
             onClick={handleGPTSearch}
           >

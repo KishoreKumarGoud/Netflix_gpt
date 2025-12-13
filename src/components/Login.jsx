@@ -123,7 +123,7 @@ className="p-3 text-[14px] sm:text-base bg-gray-900/70 rounded outline-none"
 
 className="p-3 text-[14px] sm:text-base bg-gray-900/70 rounded outline-none"
         />
-        <button className="p-1 bg-red-600 rounded text-sm cursor-pointer" onClick={(e)=>validatedetails(e)}>
+        <button className="p-1 bg-yellow-600 rounded text-sm cursor-pointer" onClick={(e)=>validatedetails(e)}>
 {isSignIn ? "Sign In" : "Sign Up"}        </button>
         <div className="flex text-gray-400 justify-between -mt-3">
            <span className="text-xs">Remember me</span>
